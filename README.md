@@ -1,8 +1,9 @@
 # Entrega TP0
 
+1)
+
 make docker-compose-up
 
-1)
 levanta 2 clientes, se verifica con 
 
 make docker-compose-logs
