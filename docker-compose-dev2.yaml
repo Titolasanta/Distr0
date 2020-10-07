@@ -8,10 +8,7 @@ services:
     image: server:latest
     entrypoint: python3 /main.py
     environment:
-      - PYTHONUNBUFFERED=1
-      - SERVER_IP=server
-      - SERVER_PORT=12345
-      - SERVER_LISTEN_BACKLOG=5
+      - SERVER_PORT=cualquier_cosa_1
     networks:
       - testing_net
     volumes:
@@ -22,10 +19,7 @@ services:
     image: client:latest
     entrypoint: /client
     environment:
-      - CLI_ID=1
-      - CLI_SERVER_ADDRESS=server:11112
-      - CLI_LOOP_LAPSE=1m2s
-      - CLI_LOOP_PERIOD=10s
+      - CLI_SERVER_ADDRESS=cualquier_cosa_2
     networks:
       - testing_net
     volumes:
@@ -37,11 +31,6 @@ services:
     container_name: client2
     image: client:latest
     entrypoint: /client
-    environment:
-      - CLI_ID=2
-      - CLI_SERVER_ADDRESS=server:12345
-      - CLI_LOOP_LAPSE=1m2s
-      - CLI_LOOP_PERIOD=10s
     networks:
       - testing_net
     volumes:

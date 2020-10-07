@@ -1,3 +1,34 @@
+# Entrega TP0
+
+make docker-compose-up
+
+1)
+levanta 2 clientes, se verifica con 
+
+make docker-compose-logs
+make docker-compose-down
+
+2)
+make docker-compose-vol-up
+
+primero levanta una imagen mas de docker con golang que escribe en un volumen los datos de configuracion,
+luego levanta el docker-compose, los clientes en este caso tiene el mismo id 
+ya que no cree una logica para asignarles ids diferentes 
+
+make docker-compose-vol-logs
+make docker-compose-vol-down
+
+3)
+make docker-nc
+
+levanta el compose, crea una net, ata el servidor a la net
+crea un nuevo container atado a la red y ejecuta adentro un comando de netcat, 
+se puede ver por la misma consola la respuesta del servidor
+
+make docker-nc-clean
+
+
+
 # Docker Compose Init
 El siguiente ejemplo es un cliente-servidor el cual corre en containers
 con la ayuda de [docker-compose](https://docs.docker.com/compose/). El presente
